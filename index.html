@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analiza Date PNDR 2007-2013 | Dezvoltare Rurală</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #27ae60;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #e1e4e8;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2.5rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 2.2rem;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: var(--primary-color);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .metric-card {
+            background: #f1f8f5;
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .metric-card h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 0.9rem;
+            color: #555;
+            text-transform: uppercase;
+        }
+
+        .metric-card p {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .chart-container {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .chart-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        pre {
+            background: #f6f8fa;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1rem;
+            overflow-x: auto;
+            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.85rem;
+            line-height: 1.45;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Analiza Datelor PNDR (2007–2013)</h1>
+        <p>Utilizarea datelor deschise în agricultură și dezvoltare rurală</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Prezentare Generală -->
+        <section>
+            <h2>Despre Proiect</h2>
+            <p>Această analiză utilizează datele libere puse la dispoziție de către AFIR (<a href="https://www.afir.ro/rapoarte/beneficiari-de-fonduri-europene/date-deschise/" target="_blank">Rapoarte AFIR</a>, <a href="https://opendata.afir.info" target="_blank">OpenData AFIR</a>) privind proiectele din programarea 2007–2013 a Programului Național de Dezvoltare Rurală (PNDR), precum și cele din perioada 2014–2020.</p>
+            <p>Rolul acestui demers este de a arăta utilitatea datelor deschise în domeniul agriculturii și al dezvoltării rurale, evidențiind modalitățile prin care acestea generează cunoștințe noi utile în procesul de luare a deciziilor. O cerere crescută pentru acest tip de date din partea mediului academic și civic poate stimula instituțiile statului (APIA, AFIR, MADR) să extindă transparența și seturile de date publicate[cite: 1].</p>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h4>Valoare Contractată</h4>
+                    <p>~5,01 Mld. EUR</p>
+                </div>
+                <div class="metric-card">
+                    <h4>Valoare Plătită</h4>
+                    <p>~4,76 Mld. EUR</p>
+                </div>
+                <div class="metric-card">
+                    <h4>Rată de Absorbție</h4>
+                    <p>95%</p>
+                </div>
+                <div class="metric-card">
+                    <h4>Volum Dataset</h4>
+                    <p>86.751 rânduri</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Indicatori Financiari și Context -->
+        <section>
+            <h2>Structura Datelor și Contextul Financiar</h2>
+            <p>Setul de date aferent primei programări (2007–2013) conține 86.751 de înregistrări și 16 coloane descriptive: <code>['entityid', 'nume', 'tip_organizare', 'cod_fiscal', 'roapia', 'siruta', 'localitate', 'adresa', 'codproiect', 'valoare_contractata', 'valoare_platita', 'oj', 'cr', 'longitude', 'latitude', 'amplasarelocalitate']</code>[cite: 1]. Cele mai relevante elemente pentru analiză vizează beneficiarii, formele de organizare (AG, PFA) și distribuția teritorială[cite: 1].</p>
+            
+            <h3>De ce diferă totalul de alocarea totală a programului?</h3>
+            <ul>
+                <li><strong>Măsuri de Investiții:</strong> Suma contractată în baza de analiză se situează la aproximativ <strong>5 miliarde EUR</strong> (valoare contractată exactă de 5.012.452.124,39 EUR și plătită de 4.758.639,831.71 EUR)[cite: 1]. Aceasta acoperă strict măsurile de investiții cu contracte de finanțare individuale: modernizări de ferme, instalarea tinerilor fermieri, pensiuni agroturistice, sau renovarea satelor prin Măsura 322[cite: 1].</li>
+                <li><strong>Subvenții și Plăți Compensatorii:</strong> Diferența de aproximativ 4 miliarde EUR până la totalul de 9,3 miliarde EUR al PNDR 2007–2013 provine din subvenții anuale și plăți compensatorii (ex. Măsura 214 – plăți de agromediu, zone montane defavorizate)[cite: 1]. Deoarece plata acestora se calculează la hectar și nu prin contracte individuale de investiții, ele nu apar în aceste seturi de date tabulare[cite: 1].</li>
+                <li><strong>Performanță de Absorbție:</strong> Raportul de 95% dintre valoarea plătită (4,75 mld. EUR) și cea contractată (5,01 mld. EUR) confirmă statutul PNDR 2007–2013 drept campionul absolut al României la fondurile europene, fiind singurul program operațional major care a depășit o rată de absorbție de 90%[cite: 1].</li>
+            </ul>
+        </section>
+
+        <!-- Vizualizare Grafică -->
+        <section>
+            <h2>Analiza Proiectelor pe Județe</h2>
+            <p>Deoarece seturile inițiale AFIR nu includeau o coloană explicită pentru județe, datele au fost mapate utilizând codul SIRUTA și baza de date open-source disponibilă la <a href="https://github.com/strainu/SIRUTA/blob/master/siruta.csv" target="_blank">strainu/SIRUTA</a>[cite: 1].</p>
+            
+            <div class="chart-container">
+                <img src="assets/proiecte_judete.png" alt="Grafic Proiecte pe Județe: Valori financiare vs. Număr de proiecte">
+            </div>
+        </section>
+
+        <!-- Codul folosit -->
+        <section>
+            <h2>Metodologie și Cod de Prelucrare (Python)</h2>
+            <p>Prelucrarea datelor a fost realizată local utilizând mediul Jupyter Notebook și librăria Pandas pentru agregare și curățare[cite: 1].</p>
+            <pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 1. Ne asigurăm că valorile sunt numerice
+df['valoare_contractata'] = pd.to_numeric(df['valoare_contractata'], errors='coerce').fillna(0)
+df['valoare_platita'] = pd.to_numeric(df['valoare_platita'], errors='coerce').fillna(0)
+
+# 2. Grupăm datele pe județe
+df_judete = df.groupby('judet').agg(
+    numar_proiecte=('judet', 'size'),
+    total_contractat=('valoare_contractata', 'sum'),
+    total_platit=('valoare_platita', 'sum')
+).reset_index()
+
+df_judete = df_judete.sort_values(by='total_contractat', ascending=False)
+
+# 3. Generarea graficului comparativ
+fig, ax1 = plt.subplots(figsize=(18, 8))
+x = np.arange(len(df_judete['judet']))
+width = 0.35
+
+bara_contractat = ax1.bar(x - width/2, df_judete['total_contractat'], width, label='Valoare Contractată', color='#1f77b4')
+bara_platit = ax1.bar(x + width/2, df_judete['total_platit'], width, label='Valoare Plătită', color='#2ca02c')
+
+ax1.set_xlabel('Județ', fontsize=12)
+ax1.set_ylabel('Sume (RON)', fontsize=12)
+ax1.set_title('Proiecte pe Județe: Valori financiare vs. Număr de proiecte', fontsize=16)
+ax1.set_xticks(x)
+ax1.set_xticklabels(df_judete['judet'], rotation=45, ha='right')
+ax1.legend(loc='upper left')
+
+# 4. A doua axă Y pentru numărul de proiecte
+ax2 = ax1.twinx()
+linie_proiecte = ax2.plot(x, df_judete['numar_proiecte'], color='red', marker='o', linewidth=2, label='Număr Proiecte')
+ax2.set_ylabel('Număr de Proiecte', fontsize=12, color='red')
+ax2.tick_params(axis='y', labelcolor='red')
+ax2.legend(loc='upper right')
+
+ax1.grid(axis='y', linestyle='--', alpha=0.4)
+plt.tight_layout()
+plt.show()</code></pre>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Proiect de analiză a datelor deschise în agricultură | PNDR 2007–2013 & 2014–2020</p>
+    </footer>
+
+</body>
+</html>
