@@ -26,4 +26,4 @@ Venitul mediu per locuitor îl comparăm cu venitul la nivelul județului și ve
 Axa 1 – agricultura, axa 2 – mediu, axa 3 – non agricol, axa 4 – leader
 
 
-Metodologia detaliată de curățare a datelor AFIR poate fi consultată în [scriptul de procesare a datelor](notebooks/date_pndr.ipynb).
+Metodologia detaliată de curățare a datelor AFIR poate fi consultată în [scriptul de procesare a datelor](notebooks/date-pndr.ipynb).
